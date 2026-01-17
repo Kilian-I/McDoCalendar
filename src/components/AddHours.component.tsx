@@ -1,9 +1,10 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 
 export default function AddHours() {
     const [dateDebut, setDateDebut] = useState('');
     const [dateFin, setDateFin] = useState('');
-
+    const queryClient = useQueryClient();
 
     const calculateHours = () => {
         if (!dateDebut || !dateFin) return 0;
@@ -14,6 +15,15 @@ export default function AddHours() {
         if (diffHrs < 0) return -1;
         return diffHrs;
     }
+    const handleSave = () => {
+        const hours = calculateHours();
+        queryClient.setQueryData(['workHours'], {
+            total : hours,
+            dateDebut :dateDebut, 
+            dateFin : dateFin
+        });
+    }
+
     return (
         <>
             <div className="max-w-md p-6 mx-auto bg-white border border-gray-200 rounded-xl shadow-sm space-y-6">
@@ -69,7 +79,7 @@ export default function AddHours() {
                                     <span className="text-2xl font-bold text-blue-700">{calculateHours()}h</span>
                                 </div>
                             <div className="mt-4 flex justify-center">
-                                <button className="px-4 py-2 bg-blue-600 object-center text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <button onClick={handleSave} className="px-4 py-2 bg-blue-600 object-center text-white rounded-lg hover:bg-blue-700 transition-colors">
                                     Enregistrer
                                 </button>
                                 </div>
