@@ -1,5 +1,7 @@
+//src/pages/Home.page.tsx
 import Example from "../components/Navbar.component";
 import AddHours from "../components/AddHours.component";
+import WorkedHours from "../components/WorkedHours.component";
 
 
 export default function HomePage() {
@@ -15,6 +17,7 @@ export default function HomePage() {
       </section>
       <section className="mx-auto max-w-7xl px-6 pb-12 lg:px-8">
         <AddHours/>
+        <WorkedHours  />
       </section>
     </main>
     </>
