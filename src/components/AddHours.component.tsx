@@ -19,11 +19,19 @@ export default function AddHours() {
     const handleSave = () => {
         const hours = calculateHours();
         queryClient.setQueryData(['workHours'], {
-            total : hours,
-            dateDebut :dateDebut, 
-            dateFin : dateFin
+            total: hours,
+            dateDebut: dateDebut,
+            dateFin: dateFin
         });
     }
+
+    const handleClick = () => {
+        const maintenant = new Date();
+        const annee = maintenant.getFullYear();
+        const mois = maintenant.getMonth();
+        const nombreDeJours = new Date(annee, mois + 1, 0).getDate();
+        console.log(`Ce mois contient ${nombreDeJours} jours.`);
+    };
 
     return (
         <>
@@ -79,14 +87,28 @@ export default function AddHours() {
                                     <span className="text-blue-800 font-medium">Heures travaillées :</span>
                                     <span className="text-2xl font-bold text-blue-700">{calculateHours()}h</span>
                                 </div>
-                            <div className="mt-4 flex justify-center">
-                                <button onClick={handleSave} className="px-4 py-2 bg-blue-600 object-center text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                    Enregistrer
-                                </button>
+                                <div className="mt-4 flex justify-center">
+                                    <button onClick={handleSave} className="px-4 py-2 bg-blue-600 object-center text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                        Enregistrer
+                                    </button>
                                 </div>
                             </div>
+
                         </>
                     )}
+                    <button
+                        onClick={handleClick}
+                        style={{
+                            padding: '10px 20px',
+                            fontSize: '16px',
+                            cursor: 'pointer',
+                            backgroundColor: '#61dafb',
+                            border: 'none',
+                            borderRadius: '5px'
+                        }}
+                    >
+                        Cliquez-moi
+                    </button>
                 </div>
             </div>
 
