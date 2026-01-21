@@ -17,9 +17,14 @@ export default function HomePage() {
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-6 pb-12 lg:px-8">
+        <div className="flex">
+          <div className="shadow-md w-full">
         <AddHours/>
-        <WorkedHours  />
+        </div>
+        <div className="shadow-md w-full">
         <TableCalendrier/>
+        </div>
+        </div>
       </section>
     </main>
     </>

@@ -1,13 +1,46 @@
-export interface WorkSession {
-  id: string;
-  dateDebut: string;
-  dateFin: string;
-  total: number;
+export interface WorkPeriod {
+  debut: string;
+  fin: string;
 }
 
-export const MOCK_WORK_HOURS: WorkSession[] = [
-  { id: '1', dateDebut: '2025-05-01T08:00', dateFin: '2025-05-01T12:00', total: 4 },
-  { id: '2', dateDebut: '2025-05-01T13:00', dateFin: '2025-05-01T16:00', total: 4 },
-  { id: '3', dateDebut: '2025-05-02T09:00', dateFin: '2025-05-02T17:00', total: 8 },
-  { id: '4', dateDebut: '2025-05-03T14:00', dateFin: '2025-05-03T18:00', total: 4 },
+export interface DaySessions {
+  [date: string]: WorkPeriod[];
+}
+
+export const TRY_MOCK: DaySessions[] = [
+  // SEMAINE 1
+  { "2026-01-01": [{ debut: "08:00", fin: "13:00" }, { debut: "18:00", fin: "21:00" }] }, // Jeudi (Journée coupée)
+  { "2026-01-02": [{ debut: "09:00", fin: "17:00" }] }, // Vendredi
+  // 03 & 04 : Repos (Samedi/Dimanche)
+
+  // SEMAINE 2
+  { "2026-01-05": [{ debut: "08:30", fin: "16:30" }] }, // Lundi
+  { "2026-01-06": [{ debut: "08:00", fin: "12:00" }, { debut: "14:00", fin: "18:00" }] }, // Mardi
+  { "2026-01-07": [{ debut: "09:00", fin: "17:00" }] }, // Mercredi
+  { "2026-01-08": [{ debut: "08:00", fin: "16:00" }] }, // Jeudi
+  { "2026-01-09": [{ debut: "09:00", fin: "12:00" }] }, // Vendredi (Demi-journée)
+  // 10 & 11 : Repos
+
+  // SEMAINE 3
+  { "2026-01-12": [{ debut: "08:00", fin: "17:00" }] },
+  { "2026-01-13": [{ debut: "08:00", fin: "12:00" }, { debut: "13:00", fin: "17:00" }] },
+  { "2026-01-14": [{ debut: "09:00", fin: "18:00" }] },
+  { "2026-01-15": [{ debut: "08:30", fin: "17:30" }] },
+  { "2026-01-16": [{ debut: "09:00", fin: "16:00" }] },
+  // 17 & 18 : Repos
+
+  // SEMAINE 4
+  { "2026-01-19": [{ debut: "08:00", fin: "16:00" }] },
+  { "2026-01-20": [{ debut: "08:00", fin: "12:00" }, { debut: "13:00", fin: "17:00" }] },
+  { "2026-01-21": [{ debut: "09:00", fin: "17:00" }] },
+  { "2026-01-22": [{ debut: "08:00", fin: "17:00" }] },
+  { "2026-01-23": [{ debut: "08:00", fin: "15:00" }] },
+  // 24 & 25 : Repos
+
+  // SEMAINE 5
+  { "2026-01-26": [{ debut: "08:30", fin: "16:30" }] },
+  { "2026-01-27": [{ debut: "08:00", fin: "12:00" }, { debut: "14:00", fin: "18:00" }] },
+  { "2026-01-28": [{ debut: "09:00", fin: "17:00" }] },
+  { "2026-01-29": [{ debut: "08:00", fin: "16:00" }] },
+  { "2026-01-30": [{ debut: "09:00", fin: "12:00" }] }
 ];
