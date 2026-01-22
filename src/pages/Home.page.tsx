@@ -1,7 +1,7 @@
 //src/pages/Home.page.tsx
 import Example from "../components/Navbar.component";
 import AddHours from "../components/AddHours.component";
-import WorkedHours from "../components/WorkedHours.component";
+//import WorkedHours from "../components/WorkedHours.component";
 import TableCalendrier from "../components/TableCalendar.component";
 
 
