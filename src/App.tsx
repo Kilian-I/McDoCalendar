@@ -10,8 +10,12 @@ function App() {
     <>
 
       <Routes>
-        <Route path="/" element={<h1>Welcome to Vite + React!</h1>} />
+        {/* public path */}
+        <Route path="/" element={<h1>Page de Connexion</h1>} />
+        {/* protected path */}
         <Route path="/home" element={<HomePage />} />
+        {/* error path */}
+      <Route path="*" element={<h1>Erreur 404 : Cette page n'existe pas</h1>} />
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} />
     </>
