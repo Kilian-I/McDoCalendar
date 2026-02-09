@@ -12,6 +12,8 @@ const ErrorPage = () => {
       >
         Retour à l'accueil
       </a>
+      <link>
+      </link>
     </div>
   );
 };
