@@ -1,8 +1,10 @@
+import SecurityTable from "../components/SecurityTable.component";
+
 const DashboardPage = () =>{
 
     return(
 <>
-dashboard
+<SecurityTable/>
 </>
 
     );
