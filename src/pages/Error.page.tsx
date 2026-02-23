@@ -1,4 +1,4 @@
-//src/pages/Error.page.tsx
+//pages/Error.page.tsx
 
 const ErrorPage = () => {
   return (
