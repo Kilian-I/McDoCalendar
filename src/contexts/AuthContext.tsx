@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { User } from '../types/user.type';
-import { userApi } from '../api/user.api'; // Imagine que tu as une méthode login ici
+//import { User } from '../types/user.type';
+//import { userApi } from '../api/user.api'; // Imagine que tu as une méthode login ici
 
 interface AuthContextType {
   user: User | null;
