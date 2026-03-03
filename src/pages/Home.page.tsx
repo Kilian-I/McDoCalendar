@@ -1,8 +1,8 @@
 //pages/Home.page.tsx
-import Example from "../components/Navbar.component";
-import AddHours from "../components/AddHours.component";
+import Example from "../sections/Navbar.component";
+import AddHours from "../sections/AddHours.component";
 //import WorkedHours from "../components/WorkedHours.component";
-import TableCalendrier from "../components/TableCalendar.component";
+import TableCalendrier from "../sections/TableCalendar.component";
 
 
 export default function HomePage() {

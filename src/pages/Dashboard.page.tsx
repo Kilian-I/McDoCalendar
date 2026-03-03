@@ -1,5 +1,5 @@
 //pages/Dashboard.page.tsx
-import SecurityTable from "../components/SecurityTable.component";
+import SecurityTable from "../sections/SecurityTable.component";
 
 const DashboardPage = () =>{
 
