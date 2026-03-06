@@ -1,5 +1,4 @@
 //pages/Home.page.tsx
-import Example from "../sections/Navbar.component";
 import AddHours from "../sections/AddHours.component";
 //import WorkedHours from "../components/WorkedHours.component";
 import TableCalendrier from "../sections/TableCalendar.component";
@@ -8,7 +7,7 @@ import TableCalendrier from "../sections/TableCalendar.component";
 export default function HomePage() {
   return (
     <>
-    <Example/>
+
     <main className="min-h-screen bg-linear-to-b from-white to-gray-100">
       <section className="mx-auto max-w-7xl px-6 pt-10 pb-12 lg:px-8">
         <div>

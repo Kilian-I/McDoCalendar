@@ -5,6 +5,8 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import HomePage from './pages/Home.page'
 import ErrorPage from './pages/Error.page'
 import DashboardPage from './pages/Dashboard.page'
+import { Landing } from './pages/Landing.page'
+import { PrivateLayout } from './layout/private.layout'
 
 
 
@@ -15,10 +17,14 @@ function App() {
 
       <Routes>
         {/* public path */}
-        <Route path="/" element={<h1>Page de Connexion</h1>} />
+
+          <Route path="/" element={<Landing />} />
+
         {/* protected path */}
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route element={<PrivateLayout />}>
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/home" element={<HomePage />} />
+        </Route>
         {/* error path */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
