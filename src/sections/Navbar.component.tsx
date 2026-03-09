@@ -1,3 +1,4 @@
+//sections/Navbar.component.tsx
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import {    } from '@heroicons/react/16/solid'
 import { BellIcon, Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'

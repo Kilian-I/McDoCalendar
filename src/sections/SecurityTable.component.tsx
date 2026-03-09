@@ -1,5 +1,5 @@
+//sections.SecurityTable.component.tsx
 import React from 'react';
-
 // Définition rigoureuse des types
 interface SecurityElement {
   type: string;
